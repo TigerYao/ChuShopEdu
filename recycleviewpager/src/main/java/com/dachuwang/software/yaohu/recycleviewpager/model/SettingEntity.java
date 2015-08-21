@@ -1,7 +1,6 @@
-package com.dachuwang.software.yaohu.chushopedu.model;
+package com.dachuwang.software.yaohu.recycleviewpager.model;
 
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import com.lidroid.xutils.db.annotation.Column;
 import com.lidroid.xutils.db.annotation.Table;
@@ -13,7 +12,7 @@ import com.lidroid.xutils.db.annotation.Table;
 @Table(name = "setting_table")
 public class SettingEntity extends BaseEntity  {
 
-    public static final Parcelable.Creator<SettingEntity> CREATOR = new Parcelable.Creator<SettingEntity>() {
+    public static final Creator<SettingEntity> CREATOR = new Creator<SettingEntity>() {
         public SettingEntity createFromParcel(Parcel source) {
             return new SettingEntity(source);
         }

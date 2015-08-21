@@ -1,4 +1,4 @@
-package com.dachuwang.software.yaohu.chushopedu.model;
+package com.dachuwang.software.yaohu.recycleviewpager.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

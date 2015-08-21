@@ -1,19 +1,23 @@
-package com.dachuwang.software.yaohu.chushopedu.model;
+package com.dachuwang.software.yaohu.recycleviewpager.model;
 
 import android.os.Parcel;
-import android.os.Parcelable;
 
+import com.dachuwang.software.yaohu.recycleviewpager.db.DbUtilsHelper;
+import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.db.annotation.Column;
 import com.lidroid.xutils.db.annotation.Table;
+import com.lidroid.xutils.exception.DbException;
+
+import java.util.List;
 
 /**
  * Created by yaohu on 15/8/21.
  * email yaohu@dachuwang.com
  */
-@Table(name = "appinfo")
+@Table(name = "appinfo_table")
 public class AppInfoEntity extends BaseEntity  {
 
-    public static final Parcelable.Creator<AppInfoEntity> CREATOR = new Parcelable.Creator<AppInfoEntity>() {
+    public static final Creator<AppInfoEntity> CREATOR = new Creator<AppInfoEntity>() {
         public AppInfoEntity createFromParcel(Parcel source) {
             return new AppInfoEntity(source);
         }
@@ -85,4 +89,22 @@ public class AppInfoEntity extends BaseEntity  {
         dest.writeString(this.appclass);
         dest.writeInt(this.index);
     }
+
+    public List<AppInfoEntity> getAllFromDb(){
+        try {
+           return DbUtilsHelper.getDbUtils().findAll(AppInfoEntity.class);
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public AppInfoEntity getFirst(){
+        try {
+            return DbUtilsHelper.getDbUtils().findFirst(AppInfoEntity.class);
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
