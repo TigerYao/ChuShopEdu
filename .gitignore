@@ -5,3 +5,11 @@
 .DS_Store
 /build
 /captures
+
+*.iml
+
+app/build.gradle
+
+recycleviewpager/build.gradle
+
+recycleviewpager/recycleviewpager.iml
