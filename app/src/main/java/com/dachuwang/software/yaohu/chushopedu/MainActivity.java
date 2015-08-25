@@ -12,16 +12,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        WallpaperManager mWallManager= WallpaperManager.getInstance(this);
-//        try {
-//            mWallManager.setResource(R.raw.circle_indicator_solid);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         final Intent pickWallpaper = new Intent(Intent.ACTION_SET_WALLPAPER);
-
-//        Intent chooser = Intent.createChooser(pickWallpaper,"tese the ACTION_SET_WALLPAPER");
-
         startActivity(pickWallpaper);
 //        startService(new Intent(this, LiveWallpaper.class));
     }
